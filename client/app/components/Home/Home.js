@@ -8,6 +8,9 @@ import AppBarExampleIcon from './appbar.js';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+            MainText: "REACT Front-end with PHP backend",
+    };
     this.getPHP = this.getPHP.bind(this);
   }
   getPHP () {
@@ -25,6 +28,9 @@ class Home extends Component {
     .then(response => {
       console.log('Response:')
       console.log(response);
+      this.setState ({
+        MainText: response.message,
+      });
     })
     }
 
@@ -33,7 +39,7 @@ class Home extends Component {
       <MuiThemeProvider>
       <div>
         <AppBarExampleIcon />
-        <p className="mainText">REACT Front-end with PHP backend</p>
+        <p className="mainText">{this.state.MainText}</p>
         <br />
         <RaisedButtonExampleSimple />
         <br />
