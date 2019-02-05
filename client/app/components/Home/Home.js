@@ -19,10 +19,6 @@ class Home extends Component {
 
     fetch(`http://localhost:80/Demo_react/api/demo.php`, {
       method: 'POST',
-      headers: {
-        // Accept: 'application/json',
-        // 'Content-Type': 'application/json'
-      },
       body: formdata,
     }).then(res=>res.json())
     .then(response => {
